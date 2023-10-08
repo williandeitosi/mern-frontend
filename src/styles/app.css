@@ -107,3 +107,27 @@
   color: #fff;
   cursor: pointer;
 }
+
+/* celular */
+
+
+
+
+
+@media (max-width: 540px) {
+  .container {
+    width: 400px; 
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    width: 300px; 
+  }
+}
+
+
+@media (max-width: 330px) {
+  .container {
+    width: 250px; 
+  }
+}
