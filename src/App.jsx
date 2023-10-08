@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     try {
       const res = await axios.post("https://mern-api-nine.vercel.app/api/item", { item: itemText });
-      setListItems((prev) => [...prev, res.data]);
+      setListItems((prev) => [res.data, ...prev]);
       setitemText("");
     } catch (err) {
       console.log(err);
