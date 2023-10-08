@@ -12,7 +12,7 @@ function App() {
   const addItem = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3333/api/item", { item: itemText });
+      const res = await axios.post("https://mern-api-nine.vercel.app/api/item", { item: itemText });
       setListItems((prev) => [...prev, res.data]);
       setitemText("");
     } catch (err) {
@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const getItemList = async () => {
       try {
-        const res = await axios.get("http://localhost:3333/api/items");
+        const res = await axios.get("https://mern-api-nine.vercel.app/api/items");
         setListItems(res.data);
         console.log("render");
       } catch (err) {
@@ -35,7 +35,7 @@ function App() {
 
   const deleItems = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:3333/api/item/${id}`);
+      const res = await axios.delete(`https://mern-api-nine.vercel.app/api/item/${id}`);
       const newListItem = listItems.filter((item) => item._id !== id);
       setListItems(newListItem);
     } catch (err) {
@@ -46,7 +46,7 @@ function App() {
   const updateItem = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.put(`http://localhost:3333/api/item/${isUpdating}`,{item: updateItemText})
+      const res = await axios.put(`https://mern-api-nine.vercel.app/api/item/${isUpdating}`,{item: updateItemText})
       console.log(res)
       const updateItemIndex = listItems.findIndex(item => item._id === isUpdating)
       const updateItem = listItems[updateItemIndex].item = updateItemText
